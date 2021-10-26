@@ -15,11 +15,11 @@ const position = {
 
 const myOSStyle = Platform.select({ //aplica estilização dependendo do sistema
     ios: {
-        color: colors.blue
+        color: colors.red
     },
 
     android: {
-        color: colors.red
+        color: colors.blue
     }
 })
 
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     },
     mytext: {
         fontSize: 30,
+        fontFamily: 'AwesomePossumDemo-Shine',
         ...myOSStyle //copia a estilização
     },
     margin: {
