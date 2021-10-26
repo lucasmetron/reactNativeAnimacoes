@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 export const colors = {
     blue: '#0062ac',
@@ -13,6 +13,16 @@ const position = {
     left: 0,
 }
 
+const myOSStyle = Platform.select({ //aplica estilização dependendo do sistema
+    ios: {
+        color: colors.blue
+    },
+
+    android: {
+        color: colors.red
+    }
+})
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -21,14 +31,14 @@ const styles = StyleSheet.create({
     },
     mytext: {
         fontSize: 30,
-        color: colors.blue
+        ...myOSStyle //copia a estilização
     },
     margin: {
         margin: 10,
     },
 
     posicionador: {
-        ...position
+        ...position //copia a estilização 
     }
 })
 

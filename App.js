@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Text,
   View,
-  Button
+  Button,
 } from 'react-native';
 
 import styles, { colors } from './styles/mainStyles'
