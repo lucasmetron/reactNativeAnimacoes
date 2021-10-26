@@ -1,31 +1,23 @@
 import React from 'react';
 import {
-  SafeAreaView,
   Text,
   View,
-  StyleSheet
+  Button
 } from 'react-native';
 
+import styles, { colors } from './styles/mainStyles'
 
 const App = () => {
 
   return (
     <View style={styles.container} >
+      <Text style={[styles.mytext, styles.margin]}> TESTE 2021</Text>
+      <Text style={[styles.mytext, { fontSize: 50 }]}> TESTE 2021</Text>
       <Text style={styles.mytext}> TESTE 2021</Text>
-      <Text style={styles.mytext}> TESTE 2021</Text>
+      <Button title='Click me' color={colors.red} />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  mytext: {
-    fontSize: 30,
-  }
-})
 
 export default App;
