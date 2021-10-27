@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontFamily: 'AwesomePossumDemo-Shine',
         ...myOSStyle //copia a estilização
+
     },
     margin: {
         margin: 10,
@@ -40,6 +41,12 @@ const styles = StyleSheet.create({
 
     posicionador: {
         ...position //copia a estilização 
+    },
+
+    button: {
+        backgroundColor: colors.red,
+        padding: 10,
+        borderRadius: 10
     }
 })
 
