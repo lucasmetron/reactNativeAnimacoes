@@ -2,26 +2,11 @@ import { StyleSheet, Platform } from "react-native";
 
 export const colors = {
     blue: '#0062ac',
-    red: '#903232'
+    red: '#903232',
+    yellow: '#f4c01e'
 }
 
-const position = {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-}
 
-const myOSStyle = Platform.select({ //aplica estilização dependendo do sistema
-    ios: {
-        color: colors.red
-    },
-
-    android: {
-        color: colors.blue
-    }
-})
 
 const styles = StyleSheet.create({
     container: {
@@ -31,8 +16,8 @@ const styles = StyleSheet.create({
     },
     mytext: {
         fontSize: 30,
-        fontFamily: 'AwesomePossumDemo-Shine',
-        ...myOSStyle //copia a estilização
+        // backgroundColor: colors.yellow,
+        color: 'black',
 
     },
     margin: {
@@ -40,14 +25,9 @@ const styles = StyleSheet.create({
     },
 
     posicionador: {
-        ...position //copia a estilização 
     },
 
-    button: {
-        backgroundColor: colors.red,
-        padding: 10,
-        borderRadius: 10
-    }
+
 })
 
 export default styles;
