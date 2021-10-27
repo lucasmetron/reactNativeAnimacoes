@@ -6,20 +6,25 @@ import {
   TouchableOpacity,
   ImageBackground
 } from 'react-native';
-
 import styles, { colors } from './styles/mainStyles'
+import LinearGradient from 'react-native-linear-gradient';
 
 const App = () => {
 
   return (
     <View style={styles.container} >
-      <TouchableOpacity style={styles.button}>
-        <ImageBackground style={{ width: 300, height: 200 }} source={{ uri: 'https://img.freepik.com/fotos-gratis/paisagem-campo-verde-com-fundo-de-arvore_28976-644.jpg?size=626&ext=jpg' }}>
-          <Text style={[styles.mytext, styles.margin]}> TESTE Lucas</Text>
-        </ImageBackground>
-      </TouchableOpacity>
 
-      <Button title='Click me' color={colors.red} />
+      <LinearGradient
+        start={{ x: 0, y: 0 }} //define direção do gradiente, mas não é obrigatório
+        end={{ x: 1, y: 0 }} //define direção do gradiente, mas não é obrigatório
+        locations={[0.4, 0.6, 0.8]} //define onde começa e a caba o gradiente. Como colocamos 3 cores, precisamos passar 3 numeros 
+        colors={['red', 'green', '#192f6a']} //devemos passar o array de cores, PODE SER MAIS DE 3
+        style={styles.linearGradient}
+      >
+        <Text style={[styles.mytext, styles.margin]}> TESTE Lucas</Text>
+      </LinearGradient>
+
+
     </View>
   );
 };

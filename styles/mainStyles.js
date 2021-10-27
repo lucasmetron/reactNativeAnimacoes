@@ -16,9 +16,7 @@ const styles = StyleSheet.create({
     },
     mytext: {
         fontSize: 30,
-        // backgroundColor: colors.yellow,
-        color: 'black',
-
+        color: 'white',
     },
     margin: {
         margin: 10,
@@ -26,6 +24,11 @@ const styles = StyleSheet.create({
 
     posicionador: {
     },
+
+    linearGradient: {
+        padding: 15,
+        height: 300,
+    }
 
 
 })
