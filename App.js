@@ -24,6 +24,7 @@ const App = () => {
         <Text style={[styles.mytext, styles.margin]}> TESTE Lucas</Text>
       </LinearGradient>
 
+      <Button title='click' />
 
     </View>
   );

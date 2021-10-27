@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
 
     linearGradient: {
         padding: 15,
-        height: 300,
+        // height: 300,
+        ...StyleSheet.absoluteFill,
     }
 
 
