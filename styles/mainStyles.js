@@ -18,9 +18,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         backgroundColor: colors.yellow,
         transform: [
-            // { scale: 0.5 }, //vertical e horizontal
-            { scaleX: 2 }, //vertical
-            { scaleY: 2 } // horizontal
+            { translateX: 50 },
+            { translateY: 50 }
         ]
     },
     margin: {
