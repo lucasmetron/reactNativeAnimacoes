@@ -18,9 +18,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         backgroundColor: colors.yellow,
         transform: [
-            { rotateX: '300deg' },
-            { rotateY: '250deg' },
-            { rotateZ: '90deg' },
+            { skewX: '40deg' },
+            { skewY: '50deg' }
         ]
     },
     margin: {
