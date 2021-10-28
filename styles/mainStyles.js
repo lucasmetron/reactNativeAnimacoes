@@ -16,21 +16,16 @@ const styles = StyleSheet.create({
     },
     mytext: {
         fontSize: 30,
-        color: 'white',
+        backgroundColor: colors.yellow,
+        transform: [
+            // { scale: 0.5 }, //vertical e horizontal
+            { scaleX: 2 }, //vertical
+            { scaleY: 2 } // horizontal
+        ]
     },
     margin: {
         margin: 10,
     },
-
-    posicionador: {
-    },
-
-    linearGradient: {
-        padding: 15,
-        // height: 300,
-        ...StyleSheet.absoluteFill,
-    }
-
 
 })
 
