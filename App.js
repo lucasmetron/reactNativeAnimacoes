@@ -4,7 +4,8 @@ import {
   View,
   Button,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  SafeAreaView
 } from 'react-native';
 import styles, { colors } from './styles/mainStyles'
 import LinearGradient from 'react-native-linear-gradient';
@@ -12,12 +13,15 @@ import LinearGradient from 'react-native-linear-gradient';
 const App = () => {
 
   return (
-    <View style={styles.container} >
+    <SafeAreaView style={styles.container} >
 
-      <Text style={[styles.mytext, styles.margin]}> TESTE Lucas</Text>
-      <Button title='click' />
+      <View style={styles.viewContainer}>
+        <Text style={styles.text}>ABC</Text>
+        <Text style={styles.text}>DEF</Text>
+        <Text style={styles.text}>GHI</Text>
+      </View>
 
-    </View>
+    </SafeAreaView>
   );
 };
 

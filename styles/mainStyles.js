@@ -11,20 +11,26 @@ export const colors = {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        backgroundColor: colors.red
     },
-    mytext: {
-        fontSize: 30,
+
+    viewContainer: {
+        flexDirection: 'row',
         backgroundColor: colors.yellow,
-        transform: [
-            { skewX: '40deg' },
-            { skewY: '50deg' }
-        ]
+        flex: 0.5, // a propriedade flex diz o quanto o elemento deve crescer, se fosse 0.5, seria a metade da tela
+        flexWrap: 'wrap'
     },
-    margin: {
-        margin: 10,
-    },
+
+    text: {
+        width: 150,
+        height: 150,
+        backgroundColor: colors.blue,
+        color: 'white',
+        margin: 5,
+    }
+
 
 })
 
