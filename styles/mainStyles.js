@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: colors.yellow,
         flex: 0.5, // a propriedade flex diz o quanto o elemento deve crescer, se fosse 0.5, seria a metade da tela
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+
     },
 
     text: {
