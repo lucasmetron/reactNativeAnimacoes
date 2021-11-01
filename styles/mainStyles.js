@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
         backgroundColor: colors.yellow,
         flex: 0.5, // a propriedade flex diz o quanto o elemento deve crescer, se fosse 0.5, seria a metade da tela
         flexWrap: 'wrap',
-
+        justifyContent: 'space-evenly',
     },
 
     text: {
-        width: 150,
-        height: 150,
+        width: 50,
+        height: 50,
         backgroundColor: colors.blue,
         color: 'white',
         margin: 5,
