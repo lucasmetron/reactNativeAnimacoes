@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet, Platform, Dimensions } from "react-native";
 
 export const colors = {
     blue: '#0062ac',
@@ -6,22 +6,25 @@ export const colors = {
     yellow: '#f4c01e'
 }
 
-
+const { width } = Dimensions.get('window');
+export const size = (width / 3) - 8
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: colors.red
     },
 
     viewContainer: {
-        flexDirection: 'row',
         backgroundColor: colors.yellow,
-        flex: 0.5, // a propriedade flex diz o quanto o elemento deve crescer, se fosse 0.5, seria a metade da tela
+        flex: 1,
+        flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        width: '100%',
     },
 
     text: {
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
         height: 50,
         backgroundColor: colors.blue,
         color: 'white',
-        margin: 5,
+        marginBottom: 5
     }
 
 
