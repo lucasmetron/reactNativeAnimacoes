@@ -2,49 +2,44 @@ import React, { useState, useEffect } from 'react';
 import {
   Text,
   View,
-  Button,
-  TouchableOpacity,
-  ImageBackground,
   SafeAreaView,
-  Dimensions
+  Animated
 } from 'react-native';
 import styles, { size } from './styles/mainStyles'
-import LinearGradient from 'react-native-linear-gradient';
 
 
 const App = () => {
 
-  const [screenSize, setScreenSize] = useState(50)
-  const { width, height } = Dimensions.get('window');
+  const [x, setX] = useState(new Animated.Value(0))
+  const [y, setY] = useState(new Animated.Value(0))
 
-  function getSize() {
-    if (height > width) {
-      return (width / 3) - 8
-    } else {
-      return (width / 6) - 8
-    }
-  }
 
-  useEffect(() => {
-    Dimensions.addEventListener("change", () => {
-      setScreenSize(getSize())
+  function onPress() {
+    // setX(new Animated.Value(0))
+
+
+    const myAnimationX = Animated.timing(x, {
+      toValue: x._value === 0 ? 100 : 0, //dessa forma fica um toggle 
+      duration: 1000
     })
-  }, [])
 
-
-
+    const myAnimationY = Animated.timing(y, {
+      toValue: y._value === 0 ? 100 : 0, //dessa forma fica um toggle 
+      duration: 1000
+    })
+    myAnimationX.start()
+    myAnimationY.start()
+  }
 
   return (
     <SafeAreaView style={styles.container} >
 
-      <View style={styles.viewContainer}>
-        <Text style={[styles.text, { width: screenSize, height: screenSize }]}>ABC</Text>
-        <Text style={[styles.text, { width: screenSize, height: screenSize }]}>DEF</Text>
-        <Text style={[styles.text, { width: screenSize, height: screenSize }]}>GHI</Text>
-        <Text style={[styles.text, { width: screenSize, height: screenSize }]}>ABC</Text>
-        <Text style={[styles.text, { width: screenSize, height: screenSize }]}>DEF</Text>
-        <Text style={[styles.text, { width: screenSize, height: screenSize }]}>GHI</Text>
-      </View>
+      <Animated.Text
+        style={[styles.viewContainer, { left: x, bottom: y }]}
+        onPress={onPress}
+      >
+        TreinaWeb
+      </Animated.Text>
 
     </SafeAreaView>
   );

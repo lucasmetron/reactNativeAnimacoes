@@ -16,26 +16,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.red
     },
 
     viewContainer: {
         backgroundColor: colors.yellow,
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        width: '100%',
+        padding: 10,
+        fontSize: 20
     },
-
-    text: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.blue,
-        color: 'white',
-        marginBottom: 5
-    }
 
 
 })
