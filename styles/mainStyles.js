@@ -1,3 +1,4 @@
+import react, { useEffect } from "react";
 import { StyleSheet, Platform, Dimensions } from "react-native";
 
 export const colors = {
@@ -8,6 +9,7 @@ export const colors = {
 
 const { width } = Dimensions.get('window');
 export const size = (width / 3) - 8
+
 
 const styles = StyleSheet.create({
     container: {
