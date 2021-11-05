@@ -14,30 +14,25 @@ const App = () => {
   const [position, setPosition] = useState(new Animated.Value(0))
 
   function onPress() {
-
-    const myAnimation = Animated.timing(position, {
-      toValue: 1,
-      duration: 2000,
-      easing: Easing.elastic(5)
+    const myAnimation = Animated.spring(position, {
+      toValue: 100,
+      friction: 1,
+      // bouncines: 20, quicada no final
+      // speed: 20 velocidade do movimento
+      tension: 100 // força que a mola é acionada
     })
 
     myAnimation.start()
 
-
   }
 
-  const myLeftAnimation = position.interpolate({
-    inputRange: [0, 1],
-    // outputRange: ['red', 'blue']
-    outputRange: ['0deg', '360deg']
-  })
+
 
   return (
     <SafeAreaView style={styles.container} >
 
       <Animated.Text
-        // style={[styles.viewContainer, { backgroundColor: myLeftAnimation }]}
-        style={[styles.viewContainer, { transform: [{ rotate: myLeftAnimation }] }]}
+        style={[styles.viewContainer, { left: position }]}
         onPress={onPress}
       >
         TreinaWeb
