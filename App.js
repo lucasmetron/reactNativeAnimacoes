@@ -29,10 +29,13 @@ const App = () => {
       friction: 1,
     })
 
-    Animated.sequence([ //dessa forma as duas animações iram acontecer de forma sequencial
-      myAnimation,
-      Animated.delay(500),
-      myAnimation2
+    Animated.stagger(1000, [
+      myAnimation1,
+      myAnimation2,
+      myAnimation3,
+      myAnimation4,
+      myAnimation5,
+      myAnimation6
     ]).start()
 
     // myAnimation.start() antes usavamos assim, mas isso não garante a execução das duas ao mesmo tempo
