@@ -11,7 +11,7 @@ import styles, { size } from './styles/mainStyles'
 
 const App = () => {
 
-  const position = new Animated.Value(0)
+  const position = new Animated.Value(-100)
   const position2 = new Animated.Value(0)
 
 
@@ -20,16 +20,16 @@ const App = () => {
     position2.setValue(0)
 
     const myAnimation = Animated.timing(position, {
+      toValue: 0,
+      duration: 2000,
+    })
+
+    const myAnimation2 = Animated.spring(position2, {
       toValue: 100,
-      duration: 2000,
+      friction: 1,
     })
 
-    const myAnimation2 = Animated.timing(position2, {
-      toValue: -100,
-      duration: 2000,
-    })
-
-    Animated.parallel([ //dessa forma as duas animações iram acontecer no memso tempo
+    Animated.sequence([ //dessa forma as duas animações iram acontecer de forma sequencial
       myAnimation,
       myAnimation2
     ]).start()
@@ -41,13 +41,13 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container} >
       <Animated.Text
-        style={[styles.viewContainer, { left: position }]}
+        style={[styles.viewContainer, { top: position }]}
       >
         TreinaWeb
       </Animated.Text>
 
       <Animated.Text
-        style={[styles.viewContainer, { left: position2 }]}
+        style={[styles.viewContainer, { top: position2 }]}
         onPress={onPress}
       >
         TreinaWeb
