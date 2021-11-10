@@ -11,35 +11,37 @@ import styles, { size } from './styles/mainStyles'
 
 const App = () => {
 
+  const [canPress, setCanPress] = useState(true)
   const position = new Animated.Value(0)
   const position2 = new Animated.Value(0)
 
+  useEffect(() => {
+    console.log('canpress', canPress)
+  }, [canPress])
 
-  function onPress() {
-    position.setValue(-100)
-    position2.setValue(0)
 
-    const myAnimation = Animated.timing(position, {
-      toValue: 0,
-      duration: 1000,
-    })
+  async function onPress() {
 
-    const myAnimation2 = Animated.spring(position2, {
-      toValue: 100,
-      friction: 1,
-    })
+    if (canPress) {
+      setCanPress(false)
+      position.setValue(-100)
+      position2.setValue(0)
 
-    Animated.stagger(1000, [
-      myAnimation1,
-      myAnimation2,
-      myAnimation3,
-      myAnimation4,
-      myAnimation5,
-      myAnimation6
-    ]).start()
+      const myAnimation = Animated.timing(position, {
+        toValue: 0,
+        duration: 1000,
+      })
 
-    // myAnimation.start() antes usavamos assim, mas isso não garante a execução das duas ao mesmo tempo
-    // myAnimation2.start()
+      const myAnimation2 = Animated.spring(position2, {
+        toValue: 100,
+        friction: 1,
+      })
+
+      await Animated.stagger(1000, [
+        myAnimation,
+        myAnimation2,
+      ]).start(setCanPress(true))
+    }
   }
 
   return (
