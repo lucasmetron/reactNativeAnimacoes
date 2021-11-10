@@ -11,17 +11,17 @@ import styles, { size } from './styles/mainStyles'
 
 const App = () => {
 
-  const position = new Animated.Value(-100)
+  const position = new Animated.Value(0)
   const position2 = new Animated.Value(0)
 
 
   function onPress() {
-    position.setValue(0)
+    position.setValue(-100)
     position2.setValue(0)
 
     const myAnimation = Animated.timing(position, {
       toValue: 0,
-      duration: 2000,
+      duration: 1000,
     })
 
     const myAnimation2 = Animated.spring(position2, {
@@ -31,6 +31,7 @@ const App = () => {
 
     Animated.sequence([ //dessa forma as duas animações iram acontecer de forma sequencial
       myAnimation,
+      Animated.delay(500),
       myAnimation2
     ]).start()
 
