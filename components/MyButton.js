@@ -11,7 +11,7 @@ export default function MyButton(props) {
     let animation;
 
     useEffect(() => {
-        progress.addListener(({ value }) => {
+        progress.addListener(({ value }) => { //adiciona o evento na animção que observa o valor dele mesmo
             if (value === 100) {
                 props.onFullPress()
             }
@@ -38,9 +38,9 @@ export default function MyButton(props) {
 
     return (
         <View
-            onStartShouldSetResponder={() => true}
-            onResponderGrant={onPress}
-            onResponderRelease={onUnPress}
+            onStartShouldSetResponder={() => true} //essa função indica que vai responder qunado tocarmos na view
+            onResponderGrant={onPress} //função executada qunado pressionarmos a view
+            onResponderRelease={onUnPress} //função executada qunado soltarmos a view
             style={{ backgroundColor: '#0062ac', width: 100, padding: 10 }}
         >
             <Text style={{ textAlign: 'center', color: 'white' }}>{props.children}</Text>
