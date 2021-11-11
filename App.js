@@ -15,15 +15,10 @@ const App = () => {
   const position = new Animated.Value(0)
   const position2 = new Animated.Value(0)
 
-  useEffect(() => {
-    console.log('canpress', canPress)
-  }, [canPress])
-
-
   async function onPress() {
 
     if (canPress) {
-      setCanPress(false)
+      setCanPress(false) //para não permitir entrar na animação novamente caso pressionado o botão
       position.setValue(-100)
       position2.setValue(0)
 
@@ -40,7 +35,7 @@ const App = () => {
       await Animated.stagger(1000, [
         myAnimation,
         myAnimation2,
-      ]).start(setCanPress(true))
+      ]).start(() => { setCanPress(true) }) // no fim da animação volta o valor para true
     }
   }
 
