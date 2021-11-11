@@ -8,18 +8,14 @@ import {
 
 } from 'react-native';
 import styles, { size } from './styles/mainStyles'
-import MyButton from './components/MyButton';
+import MyScroll from './components/MyScroll';
 
 const App = () => {
-
-  function onFullPress() {
-    console.log('Clique Feito')
-  }
 
 
   return (
     <SafeAreaView style={styles.container} >
-      <MyButton onFullPress={onFullPress}>Lucas Rosa </MyButton>
+      <MyScroll />
     </SafeAreaView>
   );
 };
